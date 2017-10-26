@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b3c78689-f91f-4085-8041-982cf88d9316">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from OutStock]]>
+	</queryString>
+	<field name="OutStockID" class="java.lang.Object"/>
+	<field name="BrandID" class="java.lang.Object"/>
+	<field name="BrandName" class="java.lang.Object"/>
+	<field name="Category" class="java.lang.Object"/>
+	<field name="Description" class="java.lang.Object"/>
+	<field name="Quantity" class="java.lang.Object"/>
+	<field name="Date" class="java.lang.Object"/>
+	<field name="Remarks" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="79" forecolor="#FF3333" backcolor="#000000" uuid="a8e81928-d346-408a-8f2d-08ee11aa89ef"/>
+				<textElement textAlignment="Center">
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[OUT STOCK REPORT]]></text>
+			</staticText>
+			<image>
+				<reportElement x="28" y="0" width="111" height="79" uuid="a34f161b-a7cc-4645-9f69-4209ab6662f7"/>
+				<imageExpression><![CDATA["C:\\Users\\Pads\\Documents\\NetBeansProjects\\TechnoCorePM\\src\\com\\inventory\\app\\tclogo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="187" y="35" width="159" height="20" forecolor="#FF3333" uuid="17ccb4de-4b9a-451b-8805-b9cb8a72dffb"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[TECHNOCORE INVENTORY]]></text>
+			</staticText>
+			<image>
+				<reportElement x="424" y="0" width="114" height="79" uuid="428f8fb5-6481-4293-ae45-833d16dcde10"/>
+				<imageExpression><![CDATA["C:\\Users\\Pads\\Documents\\NetBeansProjects\\TechnoCorePM\\src\\com\\inventory\\app\\tclogo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="55" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement mode="Opaque" x="0" y="13" width="555" height="20" backcolor="#FF3333" uuid="91e957e6-a0ad-40aa-99c7-5f958b7e4aae"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="41" width="49" height="20" forecolor="#FF3333" backcolor="#000000" uuid="91413424-0f17-44f7-9b5c-5d5220067b6d"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="49" y="41" width="100" height="20" forecolor="#FF3333" backcolor="#000000" uuid="59ab8624-4c72-4467-95dc-e6ac8346a05a"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[PRODUCT NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="149" y="41" width="100" height="20" forecolor="#FF3333" backcolor="#000000" uuid="167f3a01-beb0-40ba-bfd4-4c8367171d80"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[CATEGORY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="249" y="41" width="100" height="20" forecolor="#FF3333" backcolor="#000000" uuid="f51d2a49-430f-4c78-afeb-d0501d0647fc"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[QUANTITY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="349" y="41" width="100" height="20" forecolor="#FF3333" backcolor="#000000" uuid="b9fee6f9-f35e-4d1b-876e-82083230f87b"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[REMARKS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="449" y="41" width="106" height="20" forecolor="#FF3333" backcolor="#000000" uuid="f42f7148-3e2e-456b-b248-169b07ae1dfe"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[DATE]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement mode="Opaque" x="49" y="0" width="100" height="20" backcolor="#FF3333" uuid="335eb2fb-54fc-4bcf-af07-a0467686252a"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{BrandName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="149" y="0" width="100" height="20" backcolor="#FF3333" uuid="c841b756-e822-4a75-ace1-7af9925309bc"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Category}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="249" y="0" width="100" height="20" backcolor="#FF3333" uuid="3962b0d9-bd55-4bd6-b603-a53755fc396f"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="349" y="0" width="100" height="20" backcolor="#FF3333" uuid="e1072ed2-3050-4aea-9595-a575ad600ec2"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Remarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="449" y="0" width="106" height="20" backcolor="#FF3333" uuid="61e4f920-8ced-4d3b-8983-4f1a13a1975b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="0" y="0" width="49" height="20" backcolor="#FF3333" uuid="f8fdd21c-12e2-465c-9367-39d873ba57ef"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{BrandID}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
